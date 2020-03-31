@@ -1,0 +1,26 @@
+@mixin typeTokens {
+    &.-bold {
+        font-weight: bold;
+    }
+
+    &.-caps {
+        text-transform: uppercase;
+        letter-spacing: .05em;
+    }
+
+    &.-center {
+        text-align: center;
+    }
+
+    &.-emphasize {
+        font-style: italic;
+    }
+
+    &.-inverse {
+        color: white;
+    }
+
+    &.-muted {
+        opacity: .5;
+    }
+}

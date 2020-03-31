@@ -1,0 +1,74 @@
+@import "../../../styles/3-mixins/_mixins";
+
+h1, h2, h3, h4, h5, h6 {
+    @include typeColors;
+    @include typeTokens;
+}
+
+h1 {
+    font-size: 3em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+}
+
+h2 {
+    font-size: 2.5em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+
+    h1 + & {
+        margin-top: .5em;
+    }
+}
+
+h3 {
+    font-size: 2em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+
+    h2 + & {
+        margin-top: .5em;
+    }
+}
+
+h4 {
+    font-size: 1.5em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+
+    h3 + & {
+        margin-top: .5em;
+    }
+}
+
+h5 {
+    font-size: 1.25em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+
+    h4 + & {
+        margin-top: .5em;
+    }
+}
+
+h6 {
+    font-size: 1em;
+
+    p + & {
+        margin-top: 1.5em;
+    }
+
+    h5 + & {
+        margin-top: .5em;
+    }
+}

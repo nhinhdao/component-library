@@ -1,0 +1,26 @@
+
+// 1 - Variables / Type
+// -----------------------------------------------------------------------------
+
+// Included fonts
+@import url("https://use.typekit.net/pmj6ubv.css");
+
+
+
+
+// Font Stack
+
+$_fonts: (
+    'primary': #{'interstate-mono', monospace}
+);
+
+
+
+
+// Font Weights
+
+$_weights: (
+    regular:    400,
+    bold:       700,
+    ultra:      800,
+);

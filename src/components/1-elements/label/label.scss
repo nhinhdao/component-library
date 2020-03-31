@@ -1,0 +1,34 @@
+@import "../../../styles/3-mixins/_mixins";
+
+label {
+
+    // Base Styles
+
+    font-size: .8rem;
+    line-height: 1.5;
+    max-width: 18em;
+
+
+    // Contextual Styles
+
+    
+
+
+    // Size Variations
+
+    &.-small {
+        font-size: .65rem;
+        max-width: 18rem;
+        letter-spacing: .025em;
+    }
+
+    &.-large {
+        font-size: 1.25rem;
+    }
+
+
+    // Mixins
+
+    @include typeColors;
+    @include typeTokens;
+}
