@@ -1,7 +1,70 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
 button {
-    border:         1px solid black;
-    cursor:         pointer;
-    font-weight:    bold;
-    line-height:    2;
-    padding:        0 .5em;
+    background-color:   color(neutral, lightest);
+    border-radius:      $border-radius;
+    border:             $border-width solid color(neutral, darkest);
+    color:              color(neutral, darkest);
+    cursor:             pointer;
+    font-size:          1rem;
+    font-weight:        bold;
+    line-height:        2;
+    padding:            0 .5em;
+    transition:         all .16s ease-in-out;
+
+
+    // States
+
+    &:not(:disabled) {
+        &:focus, &:hover {
+            border-color:   color(brand, primary);
+            color:          color(brand, primary);
+        }
+    }
+
+    &:disabled {
+        border-color:   color(neutral, light);
+        color:          color(neutral);
+        cursor:         not-allowed;
+    }
+
+
+    // Sizes
+
+    &.-small {
+        font-size:      .75rem;
+        letter-spacing: .025em;
+    }
+
+    &.-large {
+        font-size:  1.5rem;
+        padding:    0 1em;
+    }
+
+
+    // Tags
+
+    @include typeTags;
+
+    &.-primary {
+        background-color:   color(brand, primary);
+        border-color:       color(brand, primary);
+        color:              color(neutral, lightest);
+
+        &:not(:disabled) {
+            &:focus, &:hover {
+                background-color:   darken(color(brand, primary), 10%);
+                border-color:       darken(color(brand, primary), 10%);
+                color:              color(neutral, lightest);
+            }
+        }
+
+        &:disabled {
+            border-color:       color(neutral);
+            background-color:   color(neutral);
+            cursor:             not-allowed;
+        }
+    }
 }

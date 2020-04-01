@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../index.scss';
 import P from './paragraph';
-import H from '../header/header';
+import H from '../heading/heading';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 export default {
@@ -26,33 +26,33 @@ export const Base = () => {
 
     let wrapperStyle;
 
-    const tokens = [];
+    const tags = [];
 
-    if (boolean("bold", false, "Tokens")) {
-        tokens.push("bold");
+    if (boolean("bold", false, "Tags")) {
+        tags.push("bold");
     }
 
-    if (boolean("caps", false, "Tokens")) {
-        tokens.push("caps");
+    if (boolean("caps", false, "Tags")) {
+        tags.push("caps");
     }
 
-    if (boolean("center", false, "Tokens")) {
-        tokens.push("center");
+    if (boolean("center", false, "Tags")) {
+        tags.push("center");
     }
 
-    if (boolean("emphasize", false, "Tokens")) {
-        tokens.push("emphasize");
+    if (boolean("emphasize", false, "Tags")) {
+        tags.push("emphasize");
     }
 
-    if (boolean("inverse", false, "Tokens")) {
-        tokens.push("inverse");
+    if (boolean("inverse", false, "Tags")) {
+        tags.push("inverse");
         wrapperStyle =  {
             backgroundColor: "black",
         }
     }
 
-    if (boolean("muted", false, "Tokens")) {
-        tokens.push("muted");
+    if (boolean("muted", false, "Tags")) {
+        tags.push("muted");
     }
 
     return (
@@ -60,7 +60,7 @@ export const Base = () => {
             <P
                 color   = { colorValue }
                 size    = { sizeValue }
-                tokens  = { tokens }>
+                tags    = { tags }>
                 { text }
             </P>
         </article>

@@ -4,14 +4,17 @@ label {
 
     // Base Styles
 
-    font-size: .8rem;
+    display: inline-block;
+    font-size: 1rem;
     line-height: 1.5;
     max-width: 18em;
 
 
     // Contextual Styles
 
-    
+    p + & {
+        margin-top: .5em;
+    }
 
 
     // Size Variations
@@ -30,5 +33,5 @@ label {
     // Mixins
 
     @include typeColors;
-    @include typeTokens;
+    @include typeTags;
 }

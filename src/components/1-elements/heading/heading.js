@@ -1,10 +1,10 @@
 import React from 'react'
-import './header.scss';
+import './heading.scss';
 
 /* Interface
     className:  string,
     color:      string, from $Colors
-    tokens:     array of strings, from @typeTokens
+    tags:     array of strings, from @typeTags
 */
 
 const H1 = class extends React.Component {
@@ -20,9 +20,9 @@ const H1 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
 
@@ -51,9 +51,9 @@ const H2 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
         
@@ -82,9 +82,9 @@ const H3 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
         
@@ -113,9 +113,9 @@ const H4 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
         
@@ -144,9 +144,9 @@ const H5 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
         
@@ -175,9 +175,9 @@ const H6 = class extends React.Component {
             className += " color-" + this.props.color;
         }
 
-        if (Array.isArray(this.props.tokens)) {
-            for (let i = 0; i < this.props.tokens.length; i++) {
-                className += " -" + this.props.tokens[i].replace(" ", "");
+        if (Array.isArray(this.props.tags)) {
+            for (let i = 0; i < this.props.tags.length; i++) {
+                className += " -" + this.props.tags[i].replace(" ", "");
             }
         }
         
