@@ -1,0 +1,41 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.field {
+    display: flex;
+    align-items: center;
+
+
+    // Components
+
+    label {
+        margin: 0 1em 0 0;
+    }
+
+    input {
+        flex-grow: 1;
+    }
+
+    p {
+        margin: 0 0 0 1em;
+    }
+
+
+    // Variations
+
+    &.-vertical {
+        flex-direction: column;
+        align-items: stretch;
+
+
+        input {
+            margin: .25em 0 0 0;
+        }
+
+        p {
+            margin: .5em 0 0 0;
+        }
+    }
+
+}

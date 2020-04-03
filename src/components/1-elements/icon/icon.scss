@@ -1,0 +1,88 @@
+@import "../../../styles/3-mixins/_mixins";
+
+.icon {
+
+    // Mixins
+
+    @include transition;
+
+
+    // Base Styles
+
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    overflow: hidden;
+
+    svg path, svg rect {
+        fill: color(neutral, darkest);
+    }
+
+
+    // Size Variations
+
+    &.-large {
+        width: 40px;
+        height: 40px;
+        margin: 4px;
+    }
+
+    &.-xlarge {
+        width: 60px;
+        height: 60px;
+        margin: 6px;
+    }
+
+    &.-xxlarge {
+        width: 80px;
+        height: 80px;
+        margin: 8px;
+    }
+
+
+    // Color Variations
+
+    &.color-brand-primary {
+        svg path, svg rect {
+            fill: color(brand, primary);
+        }
+    }
+
+    &.color-neutral-lightest {
+        svg path, svg rect {
+            fill: color(neutral, lightest);
+        }
+    }
+
+    &.color-neutral-light {
+        svg path, svg rect {
+            fill: color(neutral, light);
+        }
+    }
+
+    &.color-neutral {
+        svg path, svg rect {
+            fill: color(neutral);
+        }
+    }
+
+    &.color-neutral-dark {
+        svg path, svg rect {
+            fill: color(neutral, dark);
+        }
+    }
+
+    &.color-neutral-darkest {
+        svg path, svg rect {
+            fill: color(neutral, darkest);
+        }
+    }
+
+    &.color-neutral {
+        svg path, svg rect {
+            fill: color(neutral);
+        }
+    }
+
+}

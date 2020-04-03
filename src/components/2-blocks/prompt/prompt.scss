@@ -1,0 +1,57 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.prompt {
+    display: flex;
+    justify-content: center;
+
+
+    // Components
+    
+    &-wrapper {
+        background-color: color(neutral, light);
+        padding: 2em;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-content {
+        margin-right: 2em;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    &-action {
+        margin: 0 0 0 2em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    // Variations
+
+    &.-vertical {
+        .prompt-wrapper {
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+        }
+
+        .prompt-content {
+            margin: 0 0 2rem 0;
+        }
+
+        .prompt-action {
+            margin: 0;
+        }
+    }
+
+}

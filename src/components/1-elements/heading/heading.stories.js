@@ -4,7 +4,7 @@ import H from './heading';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 export default {
-    title: 'Headers',
+    title: 'Elements/Headers',
     component: H,
     decorators: [withKnobs],
 };
@@ -16,10 +16,6 @@ export const Base = () => {
     let wrapperStyle;
 
     const tags = [];
-
-    if (boolean("bold", false, "Tags")) {
-        tags.push("bold");
-    }
 
     if (boolean("caps", false, "Tags")) {
         tags.push("caps");

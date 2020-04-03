@@ -2,36 +2,31 @@
 
 label {
 
+    // Mixins
+
+    @include transition;
+    @include typeColors;
+    @include typeTags;
+
+
     // Base Styles
 
     display: inline-block;
     font-size: 1rem;
     line-height: 1.5;
     max-width: 18em;
-
-
-    // Contextual Styles
-
-    p + & {
-        margin-top: .5em;
-    }
+    color: color(neutral, dark);
 
 
     // Size Variations
 
     &.-small {
-        font-size: .65rem;
+        font-size: .75rem;
         max-width: 18rem;
-        letter-spacing: .025em;
+        letter-spacing: .05em;
     }
 
     &.-large {
         font-size: 1.25rem;
     }
-
-
-    // Mixins
-
-    @include typeColors;
-    @include typeTags;
 }

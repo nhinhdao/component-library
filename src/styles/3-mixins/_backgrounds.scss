@@ -1,0 +1,13 @@
+@mixin backgrounds {
+    &.bg-brand-primary {
+        background-color: color(brand, primary);
+    }
+
+    &.bg-neutral-lighter {
+        background-color: color(neutral, lighter);
+    }
+
+    &.bg-neutral-light {
+        background-color: color(neutral, light);
+    }
+}

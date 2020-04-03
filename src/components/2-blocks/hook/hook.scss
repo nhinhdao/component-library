@@ -1,0 +1,45 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.hook {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+
+    // Components
+
+    input {
+        flex-grow: 1;
+    }
+
+    button {
+        margin: 0 0 0 calc(-#{$border-radius});
+    }
+
+
+    // Variations
+
+    &:not(.-vertical) {
+        button {
+            @include flatLeft;
+        }
+    }
+
+    &.-vertical {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 24em;
+
+        input {
+            padding-bottom: calc(2rem + 2 * #{$border-width});
+        }
+
+        button {
+            @include flatTop;
+            margin: calc(-2rem - 2 * #{$border-width}) 0 0 0;
+        }
+    }
+
+}

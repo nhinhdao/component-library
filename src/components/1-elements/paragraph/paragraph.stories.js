@@ -5,7 +5,7 @@ import H from '../heading/heading';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 export default {
-    title: 'Paragraph',
+    title: 'Elements/Paragraph',
     component: P,
     decorators: [withKnobs],
 };

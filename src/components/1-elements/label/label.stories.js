@@ -5,7 +5,7 @@ import P from '../paragraph/paragraph';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 export default {
-    title: 'Label',
+    title: 'Elements/Label',
     component: Label,
     decorators: [withKnobs],
 };

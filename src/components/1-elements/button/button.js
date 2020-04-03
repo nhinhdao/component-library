@@ -7,6 +7,7 @@ import './button.scss';
     onClick:    any,
     size:       string, from $Sizes
     disabled:   boolean
+    tags:       array<string>
 */
 
 const Button = class extends React.Component {

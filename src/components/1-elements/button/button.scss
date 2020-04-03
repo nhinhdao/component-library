@@ -3,32 +3,8 @@
 @import "../../../styles/3-mixins/_mixins";
 
 button {
-    background-color:   color(neutral, lightest);
-    border-radius:      $border-radius;
-    border:             $border-width solid color(neutral, darkest);
-    color:              color(neutral, darkest);
-    cursor:             pointer;
-    font-size:          1rem;
-    font-weight:        bold;
-    line-height:        2;
-    padding:            0 .5em;
-    transition:         all .16s ease-in-out;
-
-
-    // States
-
-    &:not(:disabled) {
-        &:focus, &:hover {
-            border-color:   color(brand, primary);
-            color:          color(brand, primary);
-        }
-    }
-
-    &:disabled {
-        border-color:   color(neutral, light);
-        color:          color(neutral);
-        cursor:         not-allowed;
-    }
+    @include control;
+    padding: 0 1em;
 
 
     // Sizes
@@ -40,7 +16,7 @@ button {
 
     &.-large {
         font-size:  1.5rem;
-        padding:    0 1em;
+        padding:    0 1.5em;
     }
 
 
@@ -55,8 +31,8 @@ button {
 
         &:not(:disabled) {
             &:focus, &:hover {
-                background-color:   darken(color(brand, primary), 10%);
-                border-color:       darken(color(brand, primary), 10%);
+                background-color:   darken(color(brand, primary), 6%);
+                border-color:       darken(color(brand, primary), 6%);
                 color:              color(neutral, lightest);
             }
         }

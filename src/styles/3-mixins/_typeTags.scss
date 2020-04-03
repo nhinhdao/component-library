@@ -21,6 +21,10 @@
     }
 
     &.-muted {
-        opacity: .5;
+        @include muted;
     }
+}
+
+@mixin muted {
+    opacity: .5;
 }

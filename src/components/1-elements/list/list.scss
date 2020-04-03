@@ -1,0 +1,62 @@
+@import "../../../styles/3-mixins/_mixins";
+
+ol, ul {
+
+    // Base Styles
+
+    font-size: 1rem;
+    line-height: 1.5;
+    list-style: none;
+
+    // Components
+
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        & + li {
+            margin-top: .5em;
+        }
+
+        & > .icon {
+            margin-right: .5em;
+        }
+    }
+
+    
+    // Variations
+
+    &.-inline {
+        li {
+            display: inline;
+
+            & + li:before {
+                content: ", ";
+            }
+        }
+    }
+
+    // Size Variations
+
+    &.-small {
+        font-size: .75rem;
+        letter-spacing: .025em;
+    }
+
+    &.-large {
+        font-size: 1.5rem;
+    }
+}
+
+ul {
+    &.-decorated {
+        list-style: disc;
+    }
+}
+
+ol {
+    &.-decorated {
+        list-style: decimal;
+    }
+}

@@ -1,0 +1,39 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.card {
+    border-radius:      $border-radius;
+    border:             $border-width solid color(neutral, light);
+    padding:            1em;
+    background-color:   color(neutral, lightest);
+    display:            flex;
+    flex-direction:     column;
+
+
+    // Padding
+
+    &.padding-small {
+        padding:    .5em;
+    }
+
+    &.padding-large {
+        padding:    2em;
+    }
+
+
+    // Tags
+
+    &.-edgeless {
+        border-color: rgba(0,0,0,0);
+    }
+
+    &.-inline {
+        display: inline-flex;
+    }
+
+    &.-center {
+        align-items: center;
+    }
+
+}

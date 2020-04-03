@@ -1,0 +1,32 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.nav {
+    display: flex;
+    align-items: center;
+
+
+    // Components
+
+    a.-active {
+        color: color(brand, primary);
+    }
+
+    a + a {
+        margin: 0 0 0 2em;
+    }
+
+
+    // Variations
+
+    &.-vertical {
+        flex-direction: column;
+        align-items: stretch;
+
+        a + a {
+            margin: .5em 0 0 0;
+        }
+    }
+
+}

@@ -1,0 +1,58 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+
+input {
+    @include control;
+    padding:        0 .5em;
+    font-family:    sans-serif;
+
+
+    // States
+
+    &:invalid, &.-invalid {
+        border-color: color(system, error);
+
+        &:hover, &:focus, &:focus:hover {
+            border-color: darken(color(system, error), 6%);
+        }
+
+        &:focus, &:focus:hover {
+            box-shadow:   0 0 0 3px color(system, error, .25);
+        }
+    }
+
+
+    // Sizes
+
+    &.-small {
+        font-size:      .75rem;
+        letter-spacing: .025em;
+    }
+
+    &.-large {
+        font-size: 1.5rem;
+    }
+
+
+    // Types
+
+    &[type="color"] {
+        padding:    0 .1em;
+        max-width:  calc(2em + (#{$border-width} * 2));
+        height:     calc(2em + (#{$border-width} * 2));
+    }
+
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="time"] {
+        height:     calc(2em + (#{$border-width} * 2));
+    }
+
+
+    // Tags
+
+    @include typeTags;
+    @include displayTags;
+}

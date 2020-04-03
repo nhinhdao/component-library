@@ -19,12 +19,18 @@
 
 html, body {
     font-size: $base-size;
+    font-family: sans-serif;
+}
+
+body, header, main, footer, div, article, section, aside {
+    @include backgrounds;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-block-start: 0;
     margin-block-end: 0;
     line-height: 1.5;
+    font-weight: normal;
 }
 
 ol, ul {
@@ -34,4 +40,13 @@ ol, ul {
 img {
     max-width: 100%;
     height: auto;
+}
+
+
+// This adds some breathing room to the components on storybook
+
+.sb-show-main {
+    article {
+        padding: 2rem;
+    }
 }
