@@ -1,3 +1,5 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
 @import "../../../styles/3-mixins/_mixins";
 
 p {
@@ -6,7 +8,7 @@ p {
 
     font-size: 1rem;
     line-height: 1.5;
-    max-width: 36em;
+    max-width: $line-width-max;
 
 
     // Contextual Styles

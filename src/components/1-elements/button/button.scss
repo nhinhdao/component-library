@@ -5,6 +5,42 @@
 button {
     @include control;
     padding: 0 1em;
+    display: flex;
+    align-items: center;
+
+
+    // Components 
+
+    .icon {
+        margin-top:     -.1em;
+        order:          1;
+
+        & + span {
+            margin-left:   .5em;
+        }
+    }
+
+    &.button-contents {
+        order: 2;
+    }
+
+
+
+    // Variations
+
+    &.-icon-right {
+        .icon {
+            order: 2;
+
+            & + span {
+                margin-right: .5em;
+            }
+        }
+
+        &.button-contents {
+            order: 1;
+        }
+    }
 
 
     // Sizes
@@ -29,6 +65,12 @@ button {
         border-color:       color(brand, primary);
         color:              color(neutral, lightest);
 
+        .icon {
+            svg path, svg rect {
+                fill: color(neutral, lightest);
+            }
+        }
+
         &:not(:disabled) {
             &:focus, &:hover {
                 background-color:   darken(color(brand, primary), 6%);
@@ -43,4 +85,40 @@ button {
             cursor:             not-allowed;
         }
     }
+}
+
+.toggle {
+    padding: 0 .25em;
+
+    .button-contents {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: none;
+        align-items: center;
+    }
+
+    .toggle-on, .toggle-off {
+        display: block;
+        padding: .25em .5em;
+        border-radius: $border-radius;
+        line-height: 1;
+    }
+}
+
+[aria-checked="true"] .toggle-on {
+    background: color(brand, primary);
+    color: color(neutral, lightest);
+}
+
+[aria-checked="true"]:disabled .toggle-on {
+    background: color(neutral);
+}
+
+[aria-checked="false"] .toggle-off {
+    background: color(neutral, dark);
+    color: color(neutral, lightest);
+}
+
+[aria-checked="false"]:disabled .toggle-off {
+    background: color(neutral);
 }

@@ -5,8 +5,9 @@ import P from "../../1-elements/paragraph/paragraph";
 
 /* Interface
     axis
-    heading
     body
+    heading
+    hookAxis
     size
     tags
 */
@@ -24,6 +25,10 @@ const Prompt = class extends React.Component {
 
         if (this.props.axis) {
             className += " -" + this.props.axis;
+        }
+        
+        if (this.props.hookAxis) {
+            className += " -" + this.props.hookAxis + "-hook";
         }
 
         if (Array.isArray(this.props.tags)) {

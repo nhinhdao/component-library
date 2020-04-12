@@ -14,10 +14,8 @@ export const Base = () => {
     const axisOptions = ["horizontal", "vertical"];
     const axisValue = select("Axis", axisOptions, "horizontal", "Properties");
 
-    /*
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
-    */
+    const hookAxisOptions = ["horizontal", "vertical"];
+    const hookAxisValue = select("Button Axis", hookAxisOptions, "horizontal", "Properties");
 
     const headingValue = text("Heading", "Get their attention", "Content");
     const bodyValue = text("Body", "Then draw them in and convince them to click that button.", "Content");
@@ -26,11 +24,11 @@ export const Base = () => {
         <article>
             <Prompt
                 axis        = { axisValue }
+                hookAxis    = { hookAxisValue }
                 heading     = { headingValue }
                 body        = { bodyValue }
-                // size        = { sizeValue }
             >
-                <Hook />
+                <Hook axis={hookAxisValue} />
             </Prompt>
         </article>
     );

@@ -1,13 +1,17 @@
 import React from 'react'
 import './button.scss';
+import Icon from "../icon/icon";
 
 /* Interface
-    className:  string,
-    color:      string, from $Colors
-    onClick:    any,
-    size:       string, from $Sizes
-    disabled:   boolean
-    tags:       array<string>
+    labelledBy:    string
+    className:          string,
+    color:              string, from $Colors
+    disabled:           boolean
+    icon:               string,
+    iconSide:           string, right or left
+    onClick:            any,
+    size:               string, from $Sizes
+    tags:               array<string>
 */
 
 const Button = class extends React.Component {
@@ -18,9 +22,15 @@ const Button = class extends React.Component {
 
     render() {
         let className = "";
+        let iconSize;
 
         if (this.props.size) {
             className += " -" + this.props.size;
+            iconSize = this.props.size;
+        }
+
+        if (this.props.iconSide) {
+            className += " -icon-" + this.props.iconSide;
         }
 
         if (Array.isArray(this.props.tags)) {
@@ -35,11 +45,23 @@ const Button = class extends React.Component {
 
         return (
             <button
-                className   = { className }
-                onClick     = { this.props.onClick }
-                disabled    = { this.props.disabled }
+                aria-labelledBy = { this.props.labelledBy }
+                className       = { className }
+                onClick         = { this.props.onClick }
+                disabled        = { this.props.disabled }
             >
-                { this.props.children }
+                {
+                    this.props.icon &&
+                    <Icon
+                        size = { iconSize }
+                        icon = { this.props.icon } />
+                }
+                {
+                    this.props.children &&
+                    <div className="button-contents">
+                        { this.props.children }
+                    </div>
+                }
             </button>
         )
     }

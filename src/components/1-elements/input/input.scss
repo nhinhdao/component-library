@@ -7,6 +7,8 @@ input {
     @include control;
     padding:        0 .5em;
     font-family:    sans-serif;
+    width:          100%;
+    max-width:      $line-width-max;
 
 
     // States

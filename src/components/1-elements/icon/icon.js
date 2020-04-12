@@ -17,16 +17,16 @@ const Icon = class extends React.Component {
         let size;
         switch (this.props.size) {
             case "large":
-                size = "40px";
+                size = "1.25em";
                 break;
             case "xlarge":
-                size = "60px";
+                size = "2em";
                 break;
             case "xxlarge":
-                size = "80px";
+                size = "4em";
                 break;
             default:
-                size = "20px";
+                size = "1em";
         }
 
         if (this.props.size && this.props.size !== "default") {

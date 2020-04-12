@@ -10,7 +10,7 @@
 
     // Base
 
-    display:            inline-block;
+    display:            block;
     background-color:   color(neutral, lightest);
     border-radius:      $border-radius;
     border:             $border-width solid color(neutral);
@@ -19,6 +19,7 @@
     font-size:          1rem;
     font-weight:        normal;
     line-height:        2;
+    height:             calc(2em + 2 * #{$border-width});
 
 
     // Placeholder
@@ -48,6 +49,7 @@
 
     &:disabled {
         border-color:   color(neutral, light);
+        color:          color(neutral, dark);
         cursor:         not-allowed;
 
         @include placeholder {
