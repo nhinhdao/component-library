@@ -39,7 +39,7 @@ const Toggle = class extends React.Component {
         return (
             <button
                 aria-checked    = { this.props.checked }
-                aria-labelledBy = { this.props.labelledBy }
+                aria-labelledby = { this.props.labelledBy }
                 className       = { className }
                 disabled        = { this.props.disabled }
                 onClick         = { this.props.onClick }

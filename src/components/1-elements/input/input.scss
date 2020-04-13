@@ -40,6 +40,89 @@ input {
 
     // Types
 
+    &[type="checkbox"] {
+        display:    inline-block;
+        margin:     .5em;
+        width:      calc(1em + (#{$border-width} * 2));
+        height:     calc(1em + (#{$border-width} * 2));
+
+        &:before {
+            @include control;
+            position:           absolute;
+            content:            "";
+            width:              calc(1em + (#{$border-width} * 2));
+            height:             calc(1em + (#{$border-width} * 2));
+            z-index:            1;
+        }
+
+        &:not(:disabled) {
+            &:hover, &:focus, &:focus:hover {
+                &:before {
+                    border-color: darken(color(brand, primary), 6%);
+                }
+            }
+    
+            &:focus, &:focus:hover {
+                &:before {
+                    box-shadow:   0 0 0 3px color(brand, primary, .25);
+                }
+            }
+        }
+
+        &:disabled {
+            &:before {
+                border-color:   color(neutral, light);
+                cursor:         not-allowed;
+            }
+        }
+
+        &:checked {
+            &:before {
+                content:            "✓";
+                line-height:        1.2em;
+                text-align:         center;
+                color:              color(neutral, lightest);
+                border-color:       color(brand, primary);
+                background-color:   color(brand, primary);
+            }
+
+            &:disabled {
+                &:before {
+                    border-color:       color(neutral, light);
+                    background-color:   color(neutral, light);
+                }
+            }
+        }
+
+        &.-small {
+            margin:     .5em;
+            width:      calc(.75em + (#{$border-width} * 2));
+            height:     calc(.75em + (#{$border-width} * 2));
+
+            &:before {
+                font-size:          .75rem;
+                width:              calc(.75rem + (#{$border-width} * 2));
+                height:             calc(.75rem + (#{$border-width} * 2));
+                line-height:        .85rem;
+            }
+        }
+
+        &.-large {
+            margin:     .5em;
+            width:      calc(2em + (#{$border-width} * 2));
+            height:     calc(2em + (#{$border-width} * 2));
+
+            &:before {
+                font-size:          1.5rem;
+                width:              calc(2rem + (#{$border-width} * 2));
+                height:             calc(2rem + (#{$border-width} * 2));
+                line-height:        2.2rem;
+            }
+        }
+
+
+    }
+
     &[type="color"] {
         padding:    0 .1em;
         max-width:  calc(2em + (#{$border-width} * 2));

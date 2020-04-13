@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../index.scss';
 import Input from "./input";
+import Checkbox from "./checkbox";
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
 export default {
@@ -32,6 +33,25 @@ export const Base = () => {
                 size            = { sizeValue }
                 tags            = { tags }
                 type            = { typeValue }
+            />
+        </article>
+    );
+}
+
+export const CheckboxInput = () => {
+
+    const sizeOptions = ["default", "small", "large"];
+    const sizeValue = select("Size", sizeOptions, "default");
+
+    const tags = [];
+
+    return (
+        <article>
+            <Checkbox
+                disabled        = { boolean("Disabled", false) }
+                checked         = { boolean("Checked", false) }
+                size            = { sizeValue }
+                tags            = { tags }
             />
         </article>
     );

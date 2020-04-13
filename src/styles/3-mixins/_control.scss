@@ -49,7 +49,7 @@
 
     &:disabled {
         border-color:   color(neutral, light);
-        color:          color(neutral, dark);
+        color:          color(neutral);
         cursor:         not-allowed;
 
         @include placeholder {

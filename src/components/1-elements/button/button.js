@@ -45,7 +45,7 @@ const Button = class extends React.Component {
 
         return (
             <button
-                aria-labelledBy = { this.props.labelledBy }
+                aria-labelledby = { this.props.labelledBy }
                 className       = { className }
                 onClick         = { this.props.onClick }
                 disabled        = { this.props.disabled }
@@ -67,8 +67,8 @@ const Button = class extends React.Component {
     }
 
     onClick() {
-        console.log("clicked");
         if (this.props.onClick != null) {
+            console.log("onClick");
             this.props.onClick();
         }
     }

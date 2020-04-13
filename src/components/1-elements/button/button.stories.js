@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import '../../../index.scss';
 import Button from './button';
 import Toggle from './toggle';
+import Card from '../card/card';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
 export default {
@@ -52,20 +53,27 @@ export const ToggleButton = () => {
     const sizeOptions = ["default", "small", "large"];
     const sizeValue = select("Size", sizeOptions, "default", "Properties");
 
-    let checked = boolean("Checked", false, "Properties");
-
 
     const tags = [];
 
     return (
         <article>
-            <Toggle
-                checked     = { checked }
-                onClick     = { () => { checked = !checked; }}
-                disabled    = { boolean("Disabled", false, "Properties") }
-                size        = { sizeValue }
-                tags        = { tags }
-            />
+            <Card tags={["edgeless"]}>
+                <Toggle
+                    checked     = { true }
+                    disabled    = { boolean("Disabled", false, "Properties") }
+                    size        = { sizeValue }
+                    tags        = { tags }
+                />
+            </Card>
+            <Card tags={["edgeless"]}>
+                <Toggle
+                    checked     = { false }
+                    disabled    = { boolean("Disabled", false, "Properties") }
+                    size        = { sizeValue }
+                    tags        = { tags }
+                />
+            </Card>
         </article>
     );
 }
