@@ -16,7 +16,7 @@ button {
         order:          1;
 
         & + span {
-            margin-left:   .5em;
+            margin-left:   .25em;
         }
     }
 
@@ -99,7 +99,9 @@ button {
     }
 
     .toggle-on, .toggle-off {
-        display: block;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
         padding: .25em .5em;
         border-radius: $border-radius;
         line-height: 1;
@@ -109,6 +111,12 @@ button {
 [aria-checked="true"] .toggle-on {
     background: color(brand, primary);
     color: color(neutral, lightest);
+
+    .icon {
+        path, rect {
+            fill: color(neutral, lightest);
+        }
+    }
 }
 
 [aria-checked="true"]:disabled .toggle-on {
@@ -118,6 +126,12 @@ button {
 [aria-checked="false"] .toggle-off {
     background: color(neutral, dark);
     color: color(neutral, lightest);
+
+    .icon {
+        path, rect {
+            fill: color(neutral, lightest);
+        }
+    }
 }
 
 [aria-checked="false"]:disabled .toggle-off {

@@ -14,7 +14,7 @@
     height: 1em;
     overflow: hidden;
 
-    svg path, svg rect {
+    path, rect {
         fill: color(neutral, darkest);
     }
 
@@ -40,43 +40,43 @@
     // Color Variations
 
     &.color-brand-primary {
-        svg path, svg rect {
+        path, rect {
             fill: color(brand, primary);
         }
     }
 
     &.color-neutral-lightest {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral, lightest);
         }
     }
 
     &.color-neutral-light {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral, light);
         }
     }
 
     &.color-neutral {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral);
         }
     }
 
     &.color-neutral-dark {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral, dark);
         }
     }
 
     &.color-neutral-darkest {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral, darkest);
         }
     }
 
     &.color-neutral {
-        svg path, svg rect {
+        path, rect {
             fill: color(neutral);
         }
     }

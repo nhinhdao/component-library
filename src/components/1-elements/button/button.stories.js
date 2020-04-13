@@ -4,6 +4,7 @@ import '../../../index.scss';
 import Button from './button';
 import Toggle from './toggle';
 import Card from '../card/card';
+import iconSet from '../icon/icon-set';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
 export default {
@@ -12,15 +13,21 @@ export default {
     decorators: [withKnobs],
 };
 
+const iconOptions = [];
+for (var icon in iconSet) {
+    if (Object.prototype.hasOwnProperty.call(iconSet, icon)) {
+        iconOptions.push(icon);
+    }
+}
+
 export const Base = () => {
     const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeValue = select("Size", sizeOptions, "default");
     
 
-    const textValue = text("Text", "Button Text", "Content");
+    const textValue = text("Text", "Button Text");
 
-    const iconOptions = ["none", "sync"];
-    let iconValue = select("Icon", iconOptions, "none", "Properties");
+    let iconValue = select("Icon", iconOptions, "none");
 
     if (iconValue === "none") {
         iconValue = null;
@@ -29,7 +36,7 @@ export const Base = () => {
 
     const tags = [];
 
-    if (boolean("Primary", false, "Properties")) {
+    if (boolean("Primary", false)) {
         tags.push("primary");
     }
 
@@ -37,7 +44,7 @@ export const Base = () => {
         <article>
             <Button
                 onClick     = { action('onClick') }
-                disabled    = { boolean("Disabled", false, "Properties") }
+                disabled    = { boolean("Disabled", false) }
                 size        = { sizeValue }
                 tags        = { tags }
                 icon        = { iconValue }
@@ -51,7 +58,22 @@ export const Base = () => {
 
 export const ToggleButton = () => {
     const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeValue = select("Size", sizeOptions, "default");
+
+    const onLabelValue  = text("On Label", "On");
+    let onIconValue   = select("On Icon", iconOptions, "none");
+    const offLabelValue = text("Off Label", "Off");
+    let offIconValue   = select("Off Icon", iconOptions, "none");
+
+    const disabledValue = boolean("Disabled", false);
+
+    if (onIconValue === "none") {
+        onIconValue = null;
+    }
+
+    if (offIconValue === "none") {
+        offIconValue = null;
+    }
 
 
     const tags = [];
@@ -61,7 +83,11 @@ export const ToggleButton = () => {
             <Card tags={["edgeless"]}>
                 <Toggle
                     checked     = { true }
-                    disabled    = { boolean("Disabled", false, "Properties") }
+                    disabled    = { disabledValue }
+                    offIcon     = { offIconValue }
+                    offLabel    = { offLabelValue }
+                    onIcon      = { onIconValue }
+                    onLabel     = { onLabelValue }
                     size        = { sizeValue }
                     tags        = { tags }
                 />
@@ -69,7 +95,11 @@ export const ToggleButton = () => {
             <Card tags={["edgeless"]}>
                 <Toggle
                     checked     = { false }
-                    disabled    = { boolean("Disabled", false, "Properties") }
+                    disabled    = { disabledValue }
+                    offIcon     = { offIconValue }
+                    offLabel    = { offLabelValue }
+                    onIcon      = { onIconValue }
+                    onLabel     = { onLabelValue }
                     size        = { sizeValue }
                     tags        = { tags }
                 />

@@ -1,5 +1,6 @@
 import React from 'react'
 import './button.scss';
+import Icon from '../icon/icon';
 
 /* Interface
     checked:       boolean
@@ -10,6 +11,8 @@ import './button.scss';
     onClick:       any,
     size:          string, from $Sizes
     tags:          array<string>
+    iconOn:        string,
+    iconOff:       string,
 */
 
 const Toggle = class extends React.Component {
@@ -46,8 +49,38 @@ const Toggle = class extends React.Component {
                 role            = "switch"
                 type            = "button"
             >
-                <span className={baseClass + "-on"}>On</span>
-                <span className={baseClass + "-off"}>Off</span>
+                <span className={baseClass + "-on"}>
+                    {
+                        this.props.onIcon &&
+                        <Icon
+                            className   = { baseClass + "-on-icon"}
+                            icon    = {this.props.onIcon}
+                            size    = {this.props.size}
+                        />
+                    }
+                    {
+                        this.props.onLabel &&
+                        <span className   = { baseClass + "-on-label"}>
+                            { this.props.onLabel}
+                        </span>
+                    }
+                </span>
+                <span className={baseClass + "-off"}>
+                    {
+                        this.props.offIcon &&
+                        <Icon
+                            className   = { baseClass + "-off-icon"}
+                            icon    = {this.props.offIcon}
+                            size    = {this.props.size}
+                        />
+                    }
+                    {
+                        this.props.offLabel &&
+                        <span className   = { baseClass + "-off-label"}>
+                            { this.props.offLabel }
+                        </span>
+                    }
+                </span>
             </button>
         )
     }

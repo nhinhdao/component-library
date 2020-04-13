@@ -59,5 +59,11 @@
         &:focus {
             box-shadow: 0 0 0 3px color(neutral, light, .25);
         }
+
+        .icon {
+            path, rect {
+                fill: color(neutral);
+            }
+        }
     }
 }
