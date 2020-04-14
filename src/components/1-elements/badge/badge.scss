@@ -1,0 +1,56 @@
+@import "../../../styles/3-mixins/_mixins";
+
+.badge {
+
+    // Mixins
+
+    @include transition;
+
+
+    // Base Styles
+
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 18em;
+    color: color(neutral, lightest);
+    border-radius: $border-radius;
+    padding: 0 .5em;
+
+
+    // Size Variations
+
+    &.-small {
+        font-size: .75rem;
+        max-width: 18rem;
+        letter-spacing: .05em;
+    }
+
+    &.-large {
+        font-size: 1.25rem;
+    }
+
+
+    // Variants
+
+    &.-primary {
+        background-color: color(brand, primary);
+    }
+
+    &.-secondary {
+        background-color: color(neutral, dark);
+    }
+
+    &.-danger {
+        background-color: color(system, danger);
+    }
+
+    &.-warning {
+        color: color(neutral, darkest);
+        background-color: color(system, warning);
+    }
+
+    &.-success {
+        background-color: color(system, success);
+    }
+}

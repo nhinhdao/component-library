@@ -14,14 +14,14 @@ input {
     // States
 
     &:invalid, &.-invalid {
-        border-color: color(system, error);
+        border-color: color(system, danger);
 
         &:hover, &:focus, &:focus:hover {
-            border-color: darken(color(system, error), 6%);
+            border-color: darken(color(system, danger), 6%);
         }
 
         &:focus, &:focus:hover {
-            box-shadow:   0 0 0 3px color(system, error, .25);
+            box-shadow:   0 0 0 3px color(system, danger, .25);
         }
     }
 

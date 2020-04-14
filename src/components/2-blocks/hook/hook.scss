@@ -34,11 +34,13 @@
 
         input {
             padding-bottom: calc(2rem + 2 * #{$border-width});
+            text-align: center;
         }
 
         button {
             @include flatTop;
             margin: calc(-2rem - 2 * #{$border-width}) 0 0 0;
+            justify-content: center;
         }
     }
 
