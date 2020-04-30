@@ -10,7 +10,7 @@ a {
     transition:         all .16s ease-in-out;
     text-decoration:    none;
 
-    &:not(.-undecorated):not(.-plain):after {
+    &:after {
         position:           absolute;
         content:            "";
         height:             1px;
@@ -23,6 +23,16 @@ a {
     &.-plain {
         color:          color(neutral, darkest);
         font-weight:    normal;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    &.-undecorated {
+        &:after {
+            display: none;
+        }
     }
 
 

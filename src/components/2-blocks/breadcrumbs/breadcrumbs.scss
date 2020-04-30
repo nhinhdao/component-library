@@ -1,0 +1,53 @@
+@import "../../../styles/1-variables/_variables";
+@import "../../../styles/2-functions/_functions";
+@import "../../../styles/3-mixins/_mixins";
+
+.breadcrumbs {
+
+    ol {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    // Components
+
+    &-item {
+        margin: 0;
+
+        & + .breadcrumbs-item {
+            &:before {
+                font-size: inherit;
+                content: "/";
+                margin: 0 .5em;
+                color: color(neutral, dark);
+            }
+        }
+    }
+
+    a {
+        color: color(brand, primary);
+    }
+
+    a.-active {
+        color: color(neutral, dark);
+    }
+
+    // Size Variants
+
+    &.-small {
+        .breadcrumbs-item:before {
+            font-size: .75em;
+            letter-spacing: .05em;
+        }
+    }
+
+    &.-large {
+        .breadcrumbs-item:before {
+            font-size: .75em;
+            font-size: 1.25rem;
+        }
+    }
+
+}
