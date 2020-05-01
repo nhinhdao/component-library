@@ -11,6 +11,9 @@ export default {
     title:      'Elements/Button',
     component:  Button,
     decorators: [withKnobs],
+    parameters: {
+        componentSubtitle: 'Standard clickable control',
+      },
 };
 
 const iconOptions = [];

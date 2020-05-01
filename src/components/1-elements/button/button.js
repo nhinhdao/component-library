@@ -2,19 +2,8 @@ import React from 'react'
 import './button.scss';
 import Icon from "../icon/icon";
 
-/* Interface
-    labelledBy:    string
-    className:          string,
-    color:              string, from $Colors
-    disabled:           boolean
-    icon:               string,
-    iconSide:           string, right or left
-    onClick:            any,
-    size:               string, from $Sizes
-    tags:               array<string>
-*/
 
-const Button = class extends React.Component {
+export const Button = class extends React.Component {
     constructor(props) {
         console.log(props);
         super(props)
@@ -74,4 +63,7 @@ const Button = class extends React.Component {
     }
 }
 
+/**
+ * The generic `button` is your go-to element for changing anything within the interface (using JavaScript and without reloading the page) except one’s location within and between documents, which is the purview of links.
+ */
 export default Button
