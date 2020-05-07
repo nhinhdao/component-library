@@ -7,7 +7,10 @@ import './badge.scss';
     variant:    primary, secondary, danger, warning, success
 */
 
-const Badge = class extends React.Component {
+export interface BadgeProps { }
+
+export class Badge extends React.Component<any, null> {
+
     render() {
         const baseClass = "badge";
         let className = baseClass;
@@ -32,7 +35,7 @@ const Badge = class extends React.Component {
 
         return (
             <label className={className}>
-                { this.props.children }
+                {this.props.children}
             </label>
         )
     }
