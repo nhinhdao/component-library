@@ -1,15 +1,22 @@
 import React from 'react'
 import './badge.scss';
 
-/* Interface
+export interface BadgeProps {
     className:  string,
-    size:       string, from $Sizes
-    variant:    primary, secondary, danger, warning, success
-*/
+    size:       string,
+    tags:       string[],
+    variant:    keyof typeof badgeVariants,
+}
 
-export interface BadgeProps { }
+export const badgeVariants = {
+    Primary:    "primary"   as "Primary",
+    Secondary:  "secondary" as "Secondary",
+    Danger:     "danger"    as "Danger",
+    Warning:    "warning"   as "Warning",
+    Success:    "success"   as "Success",
+}
 
-export class Badge extends React.Component<any, null> {
+export class Badge extends React.Component<BadgeProps, null> {
 
     render() {
         const baseClass = "badge";

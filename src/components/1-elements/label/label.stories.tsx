@@ -3,6 +3,8 @@ import '../../../index.scss';
 import Label from './label';
 import P from '../paragraph/paragraph';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { buildTags } from '../../../helpers/buildTags';
+import { Utils } from '../../../helpers/utils';
 
 export default {
     title: 'Elements/Label',
@@ -19,35 +21,13 @@ export const Base = () => {
     const colorOptions = ["default", "primary"];
     const colorValue = select("Color", colorOptions, "default", "Properties");
 
-    let wrapperStyle;
-
+    
     const tags = [];
-
-    if (boolean("bold", false, "Tags")) {
-        tags.push("bold");
-    }
-
-    if (boolean("caps", false, "Tags")) {
-        tags.push("caps");
-    }
-
-    if (boolean("center", false, "Tags")) {
-        tags.push("center");
-    }
-
-    if (boolean("emphasize", false, "Tags")) {
-        tags.push("emphasize");
-    }
-
-    if (boolean("inverse", false, "Tags")) {
-        tags.push("inverse");
-        wrapperStyle =  {
-            backgroundColor: "black",
-        }
-    }
-
-    if (boolean("muted", false, "Tags")) {
-        tags.push("muted");
+    buildTags(tags);
+    let wrapperStyle = {};
+    if (Utils.inArray("inverse", tags)) {
+        console.log("INVERSE");
+        wrapperStyle.backgroundColor = "black";
     }
 
     return (
