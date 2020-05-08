@@ -33,6 +33,7 @@ const Checkbox = class extends React.Component {
                 type        = "checkbox"
                 disabled    = { this.props.disabled }
                 checked     = { this.props.checked }
+                onChange    = { this.props.onChange }
             />
         )
     }

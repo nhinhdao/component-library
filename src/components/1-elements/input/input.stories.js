@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../index.scss';
 import Input from "./input";
 import Checkbox from "./checkbox";
@@ -39,7 +39,7 @@ export const Base = () => {
 }
 
 export const CheckboxInput = () => {
-
+    const [ checked, setChecked ] = useState(false);
     const sizeOptions = ["default", "small", "large"];
     const sizeValue = select("Size", sizeOptions, "default");
 
@@ -49,8 +49,9 @@ export const CheckboxInput = () => {
         <article>
             <Checkbox
                 disabled        = { boolean("Disabled", false) }
-                checked         = { boolean("Checked", false) }
+                checked         = { checked }
                 size            = { sizeValue }
+                onChange        = { e => setChecked(e.target.checked)}
                 tags            = { tags }
             />
         </article>
