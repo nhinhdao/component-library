@@ -3,7 +3,7 @@ import '../../../index.scss';
 import Icon from './icon';
 import List from '../list/list';
 import Label from '../label/label';
-import iconSet from './icon-set';
+import { iconSet } from './icon-set';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { Colors } from '../../../constants/colors';
 import { Sizes } from '../../../constants/sizes';

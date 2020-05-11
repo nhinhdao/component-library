@@ -4,6 +4,7 @@ import A from './link';
 import Card from '../card/card';
 import P from '../paragraph/paragraph';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title:      'Elements/Link',
@@ -12,42 +13,42 @@ export default {
 };
 
 export const Text = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
     const styleOptions = ["default", "undecorated", "plain"];
-    const styleValue = select("Style", styleOptions, "default", "Properties");
+    const styleValue = select("Style", styleOptions, "default");
 
-    const textValue = text("Text", "Link Text", "Content");
-    const hrefValue = text("Href", "http://www.catamaran.cc", "Content");
-    const labelValue = text("Aria Label", "aria-label for additional context", "Content");
+    const textValue = text("Text", "Link Text");
+    const hrefValue = text("Href", "http://www.catamaran.cc");
+    const labelValue = text("Aria Label", "aria-label for additional context");
     
     const targetOptions = ["_self", "_blank", "_parent", "_top"];
-    const targetValue = select("Target", targetOptions, "_self", "Properties");
+    const targetValue = select("Target", targetOptions, "_self");
 
     const tags = [];
     let wrapperStyle;
 
-    if (boolean("caps", false, "Tags")) {
+    if (boolean("caps", false)) {
         tags.push("caps");
     }
 
-    if (boolean("center", false, "Tags")) {
+    if (boolean("center", false)) {
         tags.push("center");
     }
 
-    if (boolean("emphasize", false, "Tags")) {
+    if (boolean("emphasize", false)) {
         tags.push("emphasize");
     }
 
-    if (boolean("inverse", false, "Tags")) {
+    if (boolean("inverse", false,)) {
         tags.push("inverse");
         wrapperStyle =  {
             backgroundColor: "black",
         }
     }
 
-    if (boolean("muted", false, "Tags")) {
+    if (boolean("muted", false)) {
         tags.push("muted");
     }
 
@@ -69,11 +70,12 @@ export const Text = () => {
                 </A>
             </Card>
             <Card tags={["edgeless"]}>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit <A
+                <P size={sizeValue}>Lorem ipsum dolor sit amet consectetur adipisicing elit <A
                     href        = { hrefValue }
                     target      = { targetValue }
                     ariaLabel   = { labelValue }
                     tags        = { tags }
+                    size        = { sizeValue }
                 >
                     { textValue }
                 </A>. Eius quaerat veritatis numquam tempore ex veniam, laudantium aliquam vero obcaecati unde quo repellat, minus odio! Ipsam hic voluptates at eos enim.</P>

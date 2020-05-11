@@ -4,8 +4,9 @@ import '../../../index.scss';
 import Button from './button';
 import Toggle from './toggle';
 import Card from '../card/card';
-import iconSet from '../icon/icon-set';
+import { iconSet } from '../icon/icon-set';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title:      'Elements/Button',
@@ -16,7 +17,7 @@ export default {
       },
 };
 
-const iconOptions: Array<any> = [];
+const iconOptions = [];
 for (var icon in iconSet) {
     if (Object.prototype.hasOwnProperty.call(iconSet, icon)) {
         iconOptions.push(icon);
@@ -24,8 +25,8 @@ for (var icon in iconSet) {
 }
 
 export const Base = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
     
 
     const textValue = text("Text", "Button Text");
@@ -60,8 +61,8 @@ export const Base = () => {
 
 
 export const ToggleButton = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
     const onLabelValue  = text("On Label", "On");
     let onIconValue   = select("On Icon", iconOptions, "none");
@@ -79,7 +80,7 @@ export const ToggleButton = () => {
     }
 
 
-    const tags: string[] = [];
+    const tags = [];
 
     return (
         <article>

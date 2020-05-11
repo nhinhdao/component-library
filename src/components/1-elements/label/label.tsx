@@ -7,6 +7,7 @@ import { Sizes } from '../../../constants/sizes';
 export interface LabelProps {
     className?: string,
     color?:     keyof typeof Colors,
+    for?:       string,
     size?:      keyof typeof Sizes,
     tags?:      Array<keyof typeof typeTags>,
 }
@@ -34,7 +35,10 @@ const Label = class extends React.Component<LabelProps, any> {
         }
 
         return (
-            <label className={className}>
+            <label
+                className   = {className}
+                htmlFor     = { this.props.for }
+            >
                 { this.props.children }
             </label>
         )

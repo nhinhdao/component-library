@@ -2,6 +2,7 @@ import React from 'react';
 import '../../../index.scss';
 import List from './list';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title: 'Elements/List',
@@ -10,19 +11,19 @@ export default {
 };
 
 export const Base = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
-    const inlineValue = boolean("Inline", false, "Properties");
-    const orderedValue = boolean("Ordered", false, "Properties");
-    const decoratedValue = boolean("Decorated", false, "Properties");
+    const inlineValue = boolean("Inline", false);
+    const orderedValue = boolean("Ordered", false);
+    const undecoratedValue = boolean("Undecorated", false);
 
     const tags = [];
 
     if (inlineValue) {
         tags.push("inline");
-    } else if (decoratedValue) {
-        tags.push("decorated");
+    } else if (undecoratedValue) {
+        tags.push("undecorated");
     }
 
     const listItems = [
@@ -35,7 +36,7 @@ export const Base = () => {
     return (
         <article>
             <List
-                decorated   = { decoratedValue}
+                decorated   = { undecoratedValue}
                 ordered     = { orderedValue }
                 size        = { sizeValue }
                 tags        = { tags }

@@ -1,30 +1,31 @@
 import React from 'react'
 import './breadcrumbs.scss';
 import A from '../../1-elements/link/link';
+import { Sizes } from '../../../constants/sizes';
 
-/* Interface
-    size:           string, from $Sizes
-    tags:           array<string>
-    items:          array<{
-        ariaLabel:  string
-        href:       string
-        name:       string
-        target:     string
-    }>
-*/
 
-const Breadcrumbs = class extends React.Component {
+export interface BreadcrumbsProps {
+    className?: string,
+    size:       keyof typeof Sizes,
+    tags:       string[],
+    items:      BreadcrumbItem[],
+}
+
+export interface BreadcrumbItem {
+    ariaLabel:  string
+    href:       string
+    name:       string
+    target:     string
+}
+
+const Breadcrumbs = class extends React.Component<BreadcrumbsProps, any> {
     render() {
         const baseClass = "breadcrumbs";
         let className = baseClass;
 
-        if (this.props.axis) {
-            className += " -" + this.props.axis;
-        }
 
-
-        let size;
-        if (this.props.size && this.props.size !== "default") {
+        let size: keyof typeof Sizes;
+        if (this.props.size && this.props.size !== Sizes.base) {
             className += " -" + this.props.size;
             size = this.props.size;
         }
@@ -48,7 +49,6 @@ const Breadcrumbs = class extends React.Component {
                         let href = item.href;
                         if (key === this.props.items.length - 1) {
                             isActive = true;
-                            href = null
                         }
                         return (
                             <li className={baseClass + "-item"}>

@@ -26,8 +26,33 @@
         letter-spacing: .05em;
     }
 
+    &.-smaller {
+        font-size: .6rem;
+        max-width: 18rem;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &.-smallest {
+        font-size: .5rem;
+        max-width: 18rem;
+        letter-spacing: .075em;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-top: .2em;
+    }
+
     &.-large {
         font-size: 1.25rem;
+    }
+
+    &.-larger {
+        font-size: 1.5rem;
+    }
+
+    &.-largest {
+        font-size: 2rem;
     }
 
 

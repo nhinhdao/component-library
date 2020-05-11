@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../../index.scss';
-import Badge, { badgeVariants } from './badge';
+import Badge, { BadgeVariants } from './badge';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title: 'Elements/Badge',
@@ -10,11 +11,11 @@ export default {
 };
 
 export const Base = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
-    const variantOptions = badgeVariants;
-    const variantValue = select("Variant", variantOptions, badgeVariants.primary);
+    const variantOptions = BadgeVariants;
+    const variantValue = select("Variant", variantOptions, BadgeVariants.primary);
 
     const textValue = text("Text", "Badge");
 

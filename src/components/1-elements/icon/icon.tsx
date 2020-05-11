@@ -1,15 +1,9 @@
 import React from 'react'
 import './icon.scss';
-import iconSet from './icon-set';
+import { iconSet } from './icon-set';
 import { Sizes } from '../../../constants/sizes';
 import { Colors } from '../../../constants/colors';
 
-/* Interface
-    icon: string
-    size: string
-    color: string
-    tags: array<string>
-*/
 
 export interface IconProps {
     icon?:      keyof typeof iconSet;

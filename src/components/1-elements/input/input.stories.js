@@ -21,16 +21,12 @@ export const Base = () => {
 
     const placeholderValue = text("Placeholder", "Placeholder");
 
-    const tags = [];
-    buildTags(tags, inputTags);
-
     return (
         <article>
             <Input
                 disabled        = { boolean("Disabled", false) }
                 placeholder     = { placeholderValue }
                 size            = { sizeValue }
-                tags            = { tags }
                 type            = { typeValue }
             />
         </article>
@@ -40,9 +36,7 @@ export const Base = () => {
 export const CheckboxInput = () => {
     const [ checked, setChecked ] = useState(false);
     const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default");
-
-    const tags = [];
+    const sizeValue = select("Size", sizeOptions, "default")
 
     return (
         <article>
@@ -51,7 +45,6 @@ export const CheckboxInput = () => {
                 checked         = { checked }
                 size            = { sizeValue }
                 onChange        = { e => setChecked(e.target.checked)}
-                tags            = { tags }
             />
         </article>
     );

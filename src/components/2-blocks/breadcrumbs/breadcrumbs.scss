@@ -34,7 +34,10 @@
         color: color(neutral, dark);
     }
 
+    @include typeSizes;
+
     // Size Variants
+    /*
 
     &.-small {
         .breadcrumbs-item:before {
@@ -49,5 +52,5 @@
             font-size: 1.25rem;
         }
     }
-
+*/
 }

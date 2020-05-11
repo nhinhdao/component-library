@@ -5,6 +5,7 @@ import { Sizes } from '../../../constants/sizes';
 export interface InputProps {
     className?: string,
     disabled?:      boolean,
+    id?:            string,
     invalid?:       boolean,
     placeholder?:   string,
     size?:          keyof typeof Sizes,
@@ -61,10 +62,11 @@ const Input = class extends React.Component<InputProps, any> {
         return (
             <input
                 className   = { className }
+                disabled    = { this.props.disabled }
+                id          = { this.props.id }
+                placeholder = { this.props.placeholder}
                 type        = { type }
                 value       = { this.props.value }
-                placeholder = { this.props.placeholder}
-                disabled    = { this.props.disabled }
             />
         )
     }

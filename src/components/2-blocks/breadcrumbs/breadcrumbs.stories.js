@@ -2,6 +2,7 @@ import React from 'react';
 import '../../../index.scss';
 import Breadcrumbs from "./breadcrumbs";
 import { withKnobs, select } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title:      'Blocks/Breadcrumbs',
@@ -11,8 +12,8 @@ export default {
 
 export const Base = () => {
 
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
     const items = [{
         href:   "http://google.com",

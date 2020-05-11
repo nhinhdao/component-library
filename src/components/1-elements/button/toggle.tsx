@@ -1,26 +1,25 @@
 import React from 'react'
 import './button.scss';
 import Icon from '../icon/icon';
+import { Sizes } from '../../../constants/sizes';
+import { typeTags } from '../../../constants/type-tags';
 
-/* Interface
-    checked:       boolean
-    className:     string,
-    color:         string, from $Colors
-    disabled:      boolean
-    labelledBy:    string
-    onClick:       any,
-    size:          string, from $Sizes
-    tags:          array<string>
-    iconOn:        string,
-    iconOff:       string,
-*/
+export interface ToggleProps {
+    className?:     string,
+    size?:          keyof typeof Sizes,
+    tags?:          Array<keyof typeof typeTags>,
+    checked?:       boolean,
+    label?:         string,
+    labelledBy?:    string,
+    disabled?:      boolean,
+    onClick?:       any,
+    onIcon?:        string,
+    onLabel?:       string,
+    offIcon?:       string,
+    offLabel?:      string,
+}
 
-const Toggle = class extends React.Component {
-    constructor(props) {
-        console.log(props);
-        super(props)
-    }
-
+const Toggle = class extends React.Component<ToggleProps, any> {
     render() {
         const baseClass = "toggle";
         let className = baseClass;

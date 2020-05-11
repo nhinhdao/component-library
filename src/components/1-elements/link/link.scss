@@ -55,7 +55,7 @@ a {
 
 
     // Sizes
-
+    /*
     &.-small {
         font-size:      .75rem;
         letter-spacing: .025em;
@@ -64,11 +64,12 @@ a {
     &.-large {
         font-size:  1.5rem;
     }
-
+    */
 
     // Tags
 
     @include typeTags;
+    @include typeSizes;
 
     &.-inverse:hover {
         color: darken(color(neutral, lightest), 10%);

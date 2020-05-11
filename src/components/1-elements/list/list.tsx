@@ -1,14 +1,17 @@
 import React from 'react'
 import './list.scss';
+import { Sizes } from '../../../constants/sizes';
 
-/* Interface
-    className:  string,
-    ordered:    boolean,
-    size:       string, from $Sizes
-    tags:       array of strings
-*/
 
-const List = class extends React.Component {
+export interface ListProps {
+    className?:     string,
+    ordered?:       boolean,
+    size?:          keyof typeof Sizes,
+    tags?:          string[],
+}
+
+
+const List = class extends React.Component<ListProps, any> {
     render() {
         let className = "";
 

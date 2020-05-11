@@ -28,14 +28,6 @@ export const Base = () => {
     const placeholderValue = text("Placeholder", "Placeholder", "Content");
     const messageValue = text("Message", "Hint text or validation messages", "Content");
 
-    const tags = [];
-
-    /*
-    if (boolean("expand", false, "Tags")) {
-        tags.push("expand");
-    }
-    */
-
     return (
         <article>
             <Field
@@ -47,7 +39,6 @@ export const Base = () => {
                 message     = { messageValue }
                 placeholder = { placeholderValue}
                 size        = { sizeValue }
-                tags        = { tags }
                 type        = { typeValue }
             />
         </article>

@@ -7,6 +7,7 @@ import { buildTags } from '../../../helpers/buildTags';
 import { Utils } from '../../../helpers/utils';
 import { typeTags } from '../../../constants/type-tags';
 import { Colors } from '../../../constants/colors';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title: 'Elements/Label',
@@ -15,13 +16,13 @@ export default {
 };
 
 export const Base = () => {
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
     let text = "This is a label";
 
     const colorOptions = Colors;
-    const colorValue = select("Color", colorOptions, colors.neutralDark);
+    const colorValue = select("Color", colorOptions, Colors.neutralDark);
 
     
     const tags = [];
@@ -30,10 +31,9 @@ export const Base = () => {
     let wrapperStyle = {};
     if (
         Utils.inArray("inverse", tags) ||
-        colorValue === colors.neutralLighter ||
-        colorValue === colors.neutralLightest
+        colorValue === Colors.neutralLighter ||
+        colorValue === Colors.neutralLightest
     ) {
-        console.log("INVERSE");
         wrapperStyle = {
             backgroundColor: "black"
         }

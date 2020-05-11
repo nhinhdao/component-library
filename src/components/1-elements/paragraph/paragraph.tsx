@@ -1,5 +1,8 @@
 import React from 'react'
 import './paragraph.scss';
+import { Sizes } from '../../../constants/sizes';
+import { Colors } from '../../../constants/colors';
+import { typeTags } from '../../../constants/type-tags';
 
 /* Interface
     className:  string,
@@ -8,7 +11,14 @@ import './paragraph.scss';
     tags:       array of strings, from @typeTags
 */
 
-const P = class extends React.Component {
+export interface ParagraphProps {
+    className?: string,
+    size?:      keyof typeof Sizes,
+    color?:     keyof typeof Colors,
+    tags?:      Array<keyof typeof typeTags>
+}
+
+const P = class extends React.Component<ParagraphProps, any> {
     render() {
         let className = "";
 

@@ -1,16 +1,18 @@
 import React from 'react'
 import './button.scss';
 import Icon from "../icon/icon";
+import { iconSet } from '../icon/icon-set';
+import { Sizes } from '../../../constants/sizes';
 
 export interface ButtonProps {
     className?:     string,
-    size?:          string,
+    size?:          keyof typeof Sizes,
     iconSide?:      string,
     tags?:          Array<string>,
     labelledBy?:    string,
     onClick?:       any,
     disabled?:      boolean,
-    icon?:          string,
+    icon?:          keyof typeof iconSet,
 }
 
 
