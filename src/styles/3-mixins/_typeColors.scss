@@ -5,4 +5,44 @@
     &.color-primary {
         color: color(brand, primary)
     }
+
+    &.color-danger {
+        color: color(system, danger)
+    }
+
+    &.color-warning {
+        color: color(system, warning)
+    }
+
+    &.color-success {
+        color: color(system, success)
+    }
+
+    &.color-neutralLightest {
+        color: color(neutral, lightest)
+    }
+
+    &.color-neutralLighter {
+        color: color(neutral, lighter)
+    }
+
+    &.color-neutralLight {
+        color: color(neutral, light)
+    }
+
+    &.color-neutral {
+        color: color(neutral)
+    }
+
+    &.color-neutralDark {
+        color: color(neutral, dark)
+    }
+
+    &.color-neutralDarker {
+        color: color(neutral, darker)
+    }
+
+    &.color-neutralDarkest {
+        color: color(neutral, darkest)
+    }
 }

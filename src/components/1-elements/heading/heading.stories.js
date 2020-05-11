@@ -1,7 +1,10 @@
 import React from 'react';
 import '../../../index.scss';
 import H from './heading';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
+import { Colors } from '../../../constants/colors';
+import { buildTags } from '../../../helpers/buildTags';
+import { typeTags } from '../../../constants/type-tags';
 
 export default {
     title: 'Elements/Headers',
@@ -10,35 +13,13 @@ export default {
 };
 
 export const Base = () => {
-    const colorOptions = ["default", "primary"];
-    const colorValue = select("Color", colorOptions, "default", "Properties");
+    const colorOptions = Colors;
+    const colorValue = select("Color", colorOptions, Colors.neutralDarkest);
 
     let wrapperStyle;
 
     const tags = [];
-
-    if (boolean("caps", false, "Tags")) {
-        tags.push("caps");
-    }
-
-    if (boolean("center", false, "Tags")) {
-        tags.push("center");
-    }
-
-    if (boolean("emphasize", false, "Tags")) {
-        tags.push("emphasize");
-    }
-
-    if (boolean("inverse", false, "Tags")) {
-        tags.push("inverse");
-        wrapperStyle =  {
-            backgroundColor: "black",
-        }
-    }
-
-    if (boolean("muted", false, "Tags")) {
-        tags.push("muted");
-    }
+    buildTags(tags, typeTags);
 
     return (
         <article style={wrapperStyle}>

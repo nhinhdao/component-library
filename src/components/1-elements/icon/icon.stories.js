@@ -5,6 +5,8 @@ import List from '../list/list';
 import Label from '../label/label';
 import iconSet from './icon-set';
 import { withKnobs, select } from '@storybook/addon-knobs';
+import { Colors } from '../../../constants/colors';
+import { Sizes } from '../../../constants/sizes';
 
 export default {
     title: 'Elements/Icon',
@@ -13,11 +15,11 @@ export default {
 };
 
 export const Base = () => {
-    const sizeOptions = ["default", "large", "xlarge", "xxlarge"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
-    const colorOptions = ["brand-primary", "neutral-lightest", "neutral-light", "neutral", "neutral-dark", "neutral-darkest"];
-    const colorValue = select("Color", colorOptions, "neutral-darkest", "Properties");
+    const colorOptions = Colors;
+    const colorValue = select("Color", colorOptions, Colors.neutralDarkest);
 
     let wrapperStyle;
     if (colorValue === "neutral-lightest") {
@@ -25,9 +27,6 @@ export const Base = () => {
             backgroundColor: "#000",
         }
     }
-
-
-    const tags = [];
 
     const icons = [];
     for (var icon in iconSet) {
@@ -48,7 +47,6 @@ export const Base = () => {
                                 icon    = { icon }
                                 key     = { "icon-" + key }
                                 size    = { sizeValue }
-                                tags    = { tags }
                             />
                             <Label
                                 tags = { ["centered"] }

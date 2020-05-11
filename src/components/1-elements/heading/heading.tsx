@@ -1,5 +1,7 @@
 import React from 'react'
 import './heading.scss';
+import { Colors } from '../../../constants/colors';
+import { typeTags } from '../../../constants/type-tags';
 
 /* Interface
     className:  string,
@@ -7,8 +9,14 @@ import './heading.scss';
     tags:     array of strings, from @typeTags
 */
 
-const H1 = class extends React.Component {
-    constructor(props) {
+export interface HeadingProps {
+    className?: string,
+    color?:     keyof typeof Colors,
+    tags?:      Array<keyof typeof typeTags>,
+}
+
+const H1 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }
@@ -38,8 +46,8 @@ const H1 = class extends React.Component {
     }
 }
 
-const H2 = class extends React.Component {
-    constructor(props) {
+const H2 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }
@@ -69,8 +77,8 @@ const H2 = class extends React.Component {
     }
 }
 
-const H3 = class extends React.Component {
-    constructor(props) {
+const H3 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }
@@ -100,8 +108,8 @@ const H3 = class extends React.Component {
     }
 }
 
-const H4 = class extends React.Component {
-    constructor(props) {
+const H4 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }
@@ -131,8 +139,8 @@ const H4 = class extends React.Component {
     }
 }
 
-const H5 = class extends React.Component {
-    constructor(props) {
+const H5 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }
@@ -162,8 +170,8 @@ const H5 = class extends React.Component {
     }
 }
 
-const H6 = class extends React.Component {
-    constructor(props) {
+const H6 = class extends React.Component<HeadingProps, any> {
+    constructor(props: HeadingProps) {
         console.log(props);
         super(props)
     }

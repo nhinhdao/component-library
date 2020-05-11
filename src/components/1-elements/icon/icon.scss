@@ -26,12 +26,12 @@
         height: 1.5em;
     }
 
-    &.-xlarge {
+    &.-larger {
         width: 2em;
         height: 2em;
     }
 
-    &.-xxlarge {
+    &.-largest {
         width: 4em;
         height: 4em;
     }
@@ -39,7 +39,7 @@
 
     // Color Variations
 
-    &.color-brand-primary {
+    &.color-primary {
         path, rect {
             fill: color(brand, primary);
         }

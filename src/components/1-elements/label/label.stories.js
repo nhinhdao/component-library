@@ -2,9 +2,11 @@ import React from 'react';
 import '../../../index.scss';
 import Label from './label';
 import P from '../paragraph/paragraph';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { buildTags } from '../../../helpers/buildTags';
 import { Utils } from '../../../helpers/utils';
+import { typeTags } from '../../../constants/type-tags';
+import { Colors } from '../../../constants/colors';
 
 export default {
     title: 'Elements/Label',
@@ -14,20 +16,27 @@ export default {
 
 export const Base = () => {
     const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeValue = select("Size", sizeOptions, "default");
 
     let text = "This is a label";
 
-    const colorOptions = ["default", "primary"];
-    const colorValue = select("Color", colorOptions, "default", "Properties");
+    const colorOptions = Colors;
+    const colorValue = select("Color", colorOptions, colors.neutralDark);
 
     
     const tags = [];
-    buildTags(tags);
+    buildTags(tags, typeTags);
+
     let wrapperStyle = {};
-    if (Utils.inArray("inverse", tags)) {
+    if (
+        Utils.inArray("inverse", tags) ||
+        colorValue === colors.neutralLighter ||
+        colorValue === colors.neutralLightest
+    ) {
         console.log("INVERSE");
-        wrapperStyle.backgroundColor = "black";
+        wrapperStyle = {
+            backgroundColor: "black"
+        }
     }
 
     return (
@@ -43,8 +52,6 @@ export const Base = () => {
 }
 
 export const Flow = () => {
-
-
     return (
         <article>
             <Label>This is a label</Label>

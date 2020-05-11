@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../../index.scss';
-import Card from './card';
+import Card, { cardTags, cardPadding } from './card';
 import P from '../paragraph/paragraph';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { buildTags } from '../../../helpers/buildTags';
 
 export default {
     title: 'Elements/Card',
@@ -11,17 +12,14 @@ export default {
 };
 
 export const Base = () => {
-    const paddingOptions = ["default", "small", "large"];
-    const paddingValue = select("Padding", paddingOptions, "default", "Properties");
+    const paddingOptions = cardPadding;
+    const paddingValue = select("Padding", paddingOptions, "default");
 
     const tags = [];
-
-    if (boolean("Edgeless", false, "Properties")) {
-        tags.push("edgeless");
-    }
+    buildTags(tags, cardTags);
 
     return (
-        <article className={boolean("Background", false, "Properties") ? "bg-neutral-lighter" : ""}>
+        <article className={boolean("Background", false) ? "bg-neutral-lighter" : ""}>
             <Card
                 padding = { paddingValue }
                 tags    = { tags }>

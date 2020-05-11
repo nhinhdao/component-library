@@ -2,9 +2,20 @@ import React from 'react'
 import './button.scss';
 import Icon from "../icon/icon";
 
+export interface ButtonProps {
+    className?:     string,
+    size?:          string,
+    iconSide?:      string,
+    tags?:          Array<string>,
+    labelledBy?:    string,
+    onClick?:       any,
+    disabled?:      boolean,
+    icon?:          string,
+}
 
-export const Button = class extends React.Component {
-    constructor(props) {
+
+export const Button = class extends React.Component<ButtonProps, any> {
+    constructor(props: ButtonProps) {
         console.log(props);
         super(props)
     }

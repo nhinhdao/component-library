@@ -14,7 +14,7 @@ export const Base = () => {
     const sizeValue = select("Size", sizeOptions, "default");
 
     const variantOptions = badgeVariants;
-    const variantValue = select("Variant", variantOptions, "primary");
+    const variantValue = select("Variant", variantOptions, badgeVariants.primary);
 
     const textValue = text("Text", "Badge");
 

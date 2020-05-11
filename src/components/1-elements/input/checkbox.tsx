@@ -1,26 +1,21 @@
 import React from 'react'
 import './input.scss';
+import { Sizes } from '../../../constants/sizes';
 
-/* Interface
-    className:      string,
-    disabled:       boolean,
-    invalid:        boolan;
-    size:           string, from $Sizes
-    checkd:         boolean,
-*/
+export interface CheckboxProps {
+    className?: string,
+    disabled?:  boolean,
+    size?:      keyof typeof Sizes,
+    checked?:   boolean,
+    onChange?:  any,
+}
 
-const Checkbox = class extends React.Component {
+const Checkbox = class extends React.Component<CheckboxProps, any> {
     render() {
         let className = "";
 
         if (this.props.size) {
             className += " -" + this.props.size;
-        }
-
-        if (Array.isArray(this.props.tags)) {
-            for (let i = 0; i < this.props.tags.length; i++) {
-                className += " -" + this.props.tags[i].replace(" ", "");
-            }
         }
 
         if (this.props.className) {

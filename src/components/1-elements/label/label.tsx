@@ -1,22 +1,17 @@
 import React from 'react'
 import './label.scss';
 import { typeTags } from '../../../constants/type-tags';
-
-/* Interface
-    className:  string,
-    color:      string, from $Colors
-    size:       string, from $Sizes
-    tags:     array of strings, from @typeTags
-*/
+import { Colors } from '../../../constants/colors';
+import { Sizes } from '../../../constants/sizes';
 
 export interface LabelProps {
-    className:  string,
-    color:      string,
-    size:       string,
-    tags:       Array<keyof typeof typeTags>,
+    className?: string,
+    color?:     keyof typeof Colors,
+    size?:      keyof typeof Sizes,
+    tags?:      Array<keyof typeof typeTags>,
 }
 
-const Label = class extends React.Component<LabelProps, null> {
+const Label = class extends React.Component<LabelProps, any> {
     render() {
         let className = "";
 

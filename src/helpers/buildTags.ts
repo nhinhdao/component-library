@@ -1,9 +1,8 @@
 import { boolean } from '@storybook/addon-knobs';
-import { typeTags } from '../constants/type-tags';
 
-export const buildTags = (tags: string[]) => {
-    for (let tag in typeTags) {
-        if (boolean(tag, false, "Tags")) {
+export const buildTags = (tags: string[], collection: any) => {
+    for (let tag in collection) {
+        if (boolean(tag, false)) {
             tags.push(tag);
         }
     }

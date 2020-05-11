@@ -1,17 +1,37 @@
 import React from 'react'
 import './input.scss';
+import { Sizes } from '../../../constants/sizes';
 
-/* Interface
-    className:      string,
-    disabled:       boolean,
-    invalid:        boolan;
-    placeholder:    string,
-    size:           string, from $Sizes
-    type:           string,
-    value:          string,
-*/
+export interface InputProps {
+    className?: string,
+    disabled?:      boolean,
+    invalid?:       boolean,
+    placeholder?:   string,
+    size?:          keyof typeof Sizes,
+    tags?:          Array<keyof typeof inputTags>,
+    type?:          keyof typeof inputTypes,
+    value?:         any,
+}
 
-const Input = class extends React.Component {
+export const inputTypes = {
+    color:      "color",
+    date:       "date",
+    email:      "email",
+    file:       "file",
+    number:     "number",
+    password:   "password",
+    radio:      "radio",
+    range:      "range",
+    text:       "text",
+    time:       "time",
+}
+
+export const inputTags = {
+    fullWidth: "fullWidth"
+}
+
+
+const Input = class extends React.Component<InputProps, any> {
     render() {
         let className = "";
 

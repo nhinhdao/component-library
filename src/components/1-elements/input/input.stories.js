@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../../../index.scss';
-import Input from "./input";
+import Input, { inputTypes, inputTags } from "./input";
 import Checkbox from "./checkbox";
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { Sizes } from '../../../constants/sizes';
+import { buildTags } from '../../../helpers/buildTags';
 
 export default {
     title:      'Elements/Input',
@@ -11,19 +13,16 @@ export default {
 };
 
 export const Base = () => {
-    const typeOptions = ["checkbox", "color", "date", "datetime-local", "email", "file", "number", "password", "radio", "range", "text", "time"];
-    const typeValue = select("Type", typeOptions, "text", "Properties");
+    const typeOptions = inputTypes;
+    const typeValue = select("Type", typeOptions, inputTypes.text);
 
-    const sizeOptions = ["default", "small", "large"];
-    const sizeValue = select("Size", sizeOptions, "default", "Properties");
+    const sizeOptions = Sizes;
+    const sizeValue = select("Size", sizeOptions, Sizes.base);
 
-    const placeholderValue = text("Placeholder", "Placeholder", "Content");
+    const placeholderValue = text("Placeholder", "Placeholder");
 
     const tags = [];
-
-    if (boolean("fullWidth", false, "Tags")) {
-        tags.push("fullWidth");
-    }
+    buildTags(tags, inputTags);
 
     return (
         <article>

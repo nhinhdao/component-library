@@ -16,7 +16,7 @@ export default {
       },
 };
 
-const iconOptions = [];
+const iconOptions: Array<any> = [];
 for (var icon in iconSet) {
     if (Object.prototype.hasOwnProperty.call(iconSet, icon)) {
         iconOptions.push(icon);
@@ -33,7 +33,7 @@ export const Base = () => {
     let iconValue = select("Icon", iconOptions, "none");
 
     if (iconValue === "none") {
-        iconValue = null;
+        iconValue = "";
     }
 
 
@@ -79,7 +79,7 @@ export const ToggleButton = () => {
     }
 
 
-    const tags = [];
+    const tags: string[] = [];
 
     return (
         <article>

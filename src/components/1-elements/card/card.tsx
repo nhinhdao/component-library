@@ -8,16 +8,30 @@ import './card.scss';
     tags:       array of strings, from @typeTags
 */
 
-const Card = class extends React.Component {
+export interface CardProps {
+    className?: string,
+    tags?:      Array<keyof typeof cardTags>,
+    padding?:   keyof typeof cardPadding,
+}
+
+export const cardTags = {
+    edgeless:   "edgelesss",
+    inline:     "inline",
+    center:     "center",
+}
+
+export const cardPadding = {
+    small: "small",
+    large: "large",
+}
+
+
+const Card = class extends React.Component<CardProps, any> {
     render() {
         let className = "card";
 
         if (this.props.padding) {
             className += " padding-" + this.props.padding;
-        }
-
-        if (this.props.color) {
-            className += " color-" + this.props.color;
         }
 
         if (Array.isArray(this.props.tags)) {
